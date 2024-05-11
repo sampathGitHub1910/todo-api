@@ -73,7 +73,7 @@ const deleteTodoTask = asyncHandler(async (req, res) => {
         throw new Error("Task Not Found")
     }
 
-    if(Todo.user_id.toString() !== req.user.id){
+    if(todos.user_id.toString() !== req.user.id){
         res.status(403)
         throw new Error("User don't have permission to delete other user tasks")
     }
